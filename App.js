@@ -10,6 +10,8 @@ import Home from './screens/Home';
 import Details from './screens/Details'
 import data from './assets/data/barton-data.json'
 import { DataContext } from './components/DataContext';
+import Videos from './screens/Videos';
+import Settings from './screens/Settings';
 
 const Stack = createStackNavigator();
 
@@ -37,12 +39,21 @@ export default function App() {
           <Stack.Screen
             name="Home"
             component={Home}
-            options={{ headerTitle: () => <SearchBar /> }}
+            options={{ headerTitle: (navigation) => <SearchBar navigation={navigation} /> }}
           />
 
           <Stack.Screen
             name="Details"
             component={Details}
+          />
+
+          <Stack.Screen
+            name="Videos"
+            component={Videos}
+          />
+          <Stack.Screen
+            name="Settings"
+            component={Settings}
           />
         </Stack.Navigator>
       </DataContext.Provider>

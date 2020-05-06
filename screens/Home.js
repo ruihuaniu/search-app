@@ -4,6 +4,9 @@ import SliderBanner from '../components/SliderBanner'
 import ResultsList from '../components/ResultsList'
 
 const Home = ({ navigation }) => {
+
+    console.log("home navigation is ", navigation);
+
     return (
         <>
 
@@ -12,7 +15,7 @@ const Home = ({ navigation }) => {
             {/* <Text>This is home page</Text> */}
             <Button
                 title="Go to details page"
-            // onPress={() => navigation.navigate('xxx')}
+                onPress={() => navigation.navigate('Videos')}
             />
         </>
     )

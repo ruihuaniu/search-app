@@ -1,19 +1,23 @@
 import React, { useState, useContext } from 'react'
 import { View, Text, TextInput, TouchableOpacity, Image, Alert, StyleSheet } from 'react-native'
 import { DataContext } from './DataContext'
+import Icon from '@expo/vector-icons/FontAwesome5'
 
-const SearchBar = () => {
+const SearchBar = ({ navigation }) => {
+
+    console.log("navigation is ", navigation);
+
 
     const { items, setItems, data } = useContext(DataContext)
     const [value, setValue] = useState()
 
     const handleOnPress = () => {
-        console.log(value);
-        console.log("data in search is ", items);
+        // console.log(value);
+        // console.log("data in search is ", items);
 
         const result = data.filter((item) => item.title.toLowerCase().includes(value.toLowerCase()))
         setItems(result)
-        console.log("result is ", result);
+        // console.log("result is ", result);
 
     }
     return (
@@ -30,7 +34,9 @@ const SearchBar = () => {
             <TouchableOpacity style={styles.buttonContainer} >
                 <Text style={styles.button} title="Button" onPress={handleOnPress} >Search</Text>
             </TouchableOpacity>
-
+            <Icon style={styles.settingIcon} name="cog" size={20} color="#000"
+            // onPress={() => navigation.navigate('Settings')}   //navigation with header title seems not working
+            />
 
         </View>
     )
@@ -66,6 +72,13 @@ const styles = StyleSheet.create({
     button: {
         color: '#fff',
     },
+    settingIcon: {
+        width: '5%',
+        margin: 5,
+        paddingTop: 5,
+        alignItems: 'center',
+        justifyContent: 'center',
+    }
 
 
 })

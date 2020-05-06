@@ -8,7 +8,7 @@ const Details = ({ route, navigation }) => {
 
     return (
         <>
-            <Text>This is details page</Text>
+            {/* <Text>This is details page</Text> */}
             <ListItem item={item} />
         </>
     )
