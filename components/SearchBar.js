@@ -36,10 +36,9 @@ const SearchBar = ({ data }) => {
 
 const styles = StyleSheet.create({
     container: {
-        flex: 1,
+        // flex: 1,
         flexDirection: 'row',
-        // justifyContent: 'center',
-
+        justifyContent: 'center',
         margin: 5,
 
     },

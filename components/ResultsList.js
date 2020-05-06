@@ -1,5 +1,5 @@
 import React from 'react'
-import { StyleSheet, Text, View, Image, FlatList } from 'react-native'
+import { StyleSheet, Text, View, Image, FlatList, TouchableOpacity } from 'react-native'
 
 const ResultsList = ({ data }) => {
 
@@ -10,7 +10,7 @@ const ResultsList = ({ data }) => {
 
 
         <View style={styles.container}>
-            <Text>This is the results list</Text>
+            <Text style={styles.text}>{data.length} results found and listed below </Text>
             <FlatList
                 // numColumns={2}
                 // horizontal={false}
@@ -19,7 +19,13 @@ const ResultsList = ({ data }) => {
 
                 renderItem={({ item }) => {
                     return (
-                        <Text >{item.title}</Text>
+                        <TouchableOpacity style={styles.listItem}>
+                            <View>
+                                <Text >{item.title}</Text>
+
+                            </View>
+                        </TouchableOpacity>
+
                     )
 
                 }}
@@ -37,6 +43,21 @@ export default ResultsList
 const styles = StyleSheet.create({
     container: {
         flex: 10,
+        // backgroundColor: '#f8f8f8',
+    },
+    text: {
+        textAlign: 'center',
+        padding: 5,
+        fontSize: 13,
+    },
+    listItem: {
+        width: '100%',
+        padding: 10,
+        backgroundColor: '#f8f8f8',
+        borderBottomWidth: 1,
+        borderColor: '#eee',
+        marginBottom: 5,
+
     },
     image: {
         width: 200,

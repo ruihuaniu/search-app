@@ -4,7 +4,6 @@ import { StyleSheet, Text, View, Image, ImageBackground } from 'react-native'
 const SliderBanner = () => {
     return (
         <View style={styles.container}>
-
             <ImageBackground style={styles.image} source={require("../assets/images/banner.jpg")}>
                 <Text style={styles.text}>Something good will happen</Text>
             </ImageBackground>
