@@ -1,17 +1,32 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { View, Text, TextInput, TouchableOpacity, Image, Alert, StyleSheet } from 'react-native'
 
-const SearchBar = () => {
+const SearchBar = ({ data }) => {
+
+    const [value, setValue] = useState()
+
+    const handleOnPress = () => {
+        console.log(value);
+        console.log("data in search is ", data.items);
+
+        const result = data.data.filter((item) => item.title.toLowerCase().includes(value.toLowerCase()))
+        data.setItems(result)
+        console.log("result is ", result);
+
+    }
     return (
         <View style={styles.container}>
             <View style={styles.inputContainer}>
-                <TextInput style={styles.input} placeholder="Search name here..." />
+                <TextInput
+                    style={styles.input}
+                    placeholder="Search name here..."
+                    value={value}
+                    onChangeText={text => setValue(text)}
+                />
             </View>
 
-
-
             <TouchableOpacity style={styles.buttonContainer} >
-                <Text style={styles.button} title="Button" onPress={() => Alert.alert('Button click')} >Search</Text>
+                <Text style={styles.button} title="Button" onPress={handleOnPress} >Search</Text>
             </TouchableOpacity>
 
 
@@ -24,13 +39,16 @@ const styles = StyleSheet.create({
         flex: 1,
         flexDirection: 'row',
         // justifyContent: 'center',
-        height: 40,
+
+        margin: 5,
+
     },
     inputContainer: {
         borderColor: '#ccc',
         borderWidth: 1,
         width: '70%',
-        height: 36,
+        height: '70%',
+        minHeight: 30,
         justifyContent: 'center',
     },
     input: {
@@ -38,7 +56,8 @@ const styles = StyleSheet.create({
     },
     buttonContainer: {
         width: '20%',
-        height: 36,
+        height: '70%',
+        minHeight: 30,
         alignItems: 'center',
         justifyContent: 'center',
         backgroundColor: '#1467d4'

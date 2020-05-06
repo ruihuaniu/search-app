@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View, FlatList } from 'react-native';
 import SearchBar from './components/SearchBar';
 import ResultsList from './components/ResultsList';
 import SliderBanner from './components/SliderBanner';
@@ -11,7 +11,7 @@ export default function App() {
   return (
     <View style={styles.container}>
       {/* <Text>Open up App.js to start working on your app! Hello world</Text> */}
-      <SearchBar />
+      <SearchBar data={{ items, setItems, data }} />
       <SliderBanner />
       <ResultsList data={items} />
     </View>

@@ -19,10 +19,12 @@ const styles = StyleSheet.create({
         flex: 3,
         // justifyContent: 'center',
         alignItems: 'center',
+        flexShrink: 0,
     },
     image: {
         width: 500,
         height: '100%',
+
         resizeMode: 'cover',
         alignItems: 'center',
         justifyContent: 'center',
