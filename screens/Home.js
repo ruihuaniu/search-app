@@ -1,15 +1,20 @@
 import React from 'react'
 import { StyleSheet, Text, View, Button } from 'react-native'
+import SliderBanner from '../components/SliderBanner'
+import ResultsList from '../components/ResultsList'
 
 const Home = ({ navigation }) => {
     return (
-        <View>
-            <Text>This is home page</Text>
+        <>
+
+            <SliderBanner />
+            <ResultsList navigation={navigation} />
+            {/* <Text>This is home page</Text> */}
             <Button
-                title="Go to profile page"
-                onPress={() => navigation.navigate('Details')}
+                title="Go to details page"
+            // onPress={() => navigation.navigate('xxx')}
             />
-        </View>
+        </>
     )
 }
 

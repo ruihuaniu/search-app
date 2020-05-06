@@ -1,16 +1,18 @@
-import React, { useState } from 'react'
+import React, { useState, useContext } from 'react'
 import { View, Text, TextInput, TouchableOpacity, Image, Alert, StyleSheet } from 'react-native'
+import { DataContext } from './DataContext'
 
-const SearchBar = ({ data }) => {
+const SearchBar = () => {
 
+    const { items, setItems, data } = useContext(DataContext)
     const [value, setValue] = useState()
 
     const handleOnPress = () => {
         console.log(value);
-        console.log("data in search is ", data.items);
+        console.log("data in search is ", items);
 
-        const result = data.data.filter((item) => item.title.toLowerCase().includes(value.toLowerCase()))
-        data.setItems(result)
+        const result = data.filter((item) => item.title.toLowerCase().includes(value.toLowerCase()))
+        setItems(result)
         console.log("result is ", result);
 
     }
@@ -45,8 +47,8 @@ const styles = StyleSheet.create({
     inputContainer: {
         borderColor: '#ccc',
         borderWidth: 1,
-        width: '70%',
-        height: '70%',
+        width: '75%',
+        height: '100%',
         minHeight: 30,
         justifyContent: 'center',
     },
@@ -55,7 +57,7 @@ const styles = StyleSheet.create({
     },
     buttonContainer: {
         width: '20%',
-        height: '70%',
+        height: '100%',
         minHeight: 30,
         alignItems: 'center',
         justifyContent: 'center',

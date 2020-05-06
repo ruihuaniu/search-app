@@ -9,6 +9,7 @@ import SliderBanner from './components/SliderBanner';
 import Home from './screens/Home';
 import Details from './screens/Details'
 import data from './assets/data/barton-data.json'
+import { DataContext } from './components/DataContext';
 
 const Stack = createStackNavigator();
 
@@ -17,32 +18,35 @@ export default function App() {
   const [items, setItems] = useState(data)
   return (
     <NavigationContainer>
-      <Stack.Navigator
-        screenOptions={{
-          headerStyle: {
-            backgroundColor: '#eee',
-            borderColor: '#eee',
-            elevation: 0, // remove shadow on Android
-            shadowOpacity: 0, // remove shadow on iOS
-            borderBottomWidth: 0, // remove shadow on iOS
-          },
-          headerTitleStyle: {
+      <DataContext.Provider value={{ items, setItems, data }}>
+        <Stack.Navigator
+          screenOptions={{
+            headerStyle: {
+              backgroundColor: '#eee',
+              borderColor: '#eee',
+              elevation: 0, // remove shadow on Android
+              shadowOpacity: 0, // remove shadow on iOS
+              borderBottomWidth: 0, // remove shadow on iOS
+            },
+            headerTitleStyle: {
 
-          },
-          headerTitleAlign: 'center'
-        }}
-      >
-        <Stack.Screen
-          name="Home"
-          component={Home}
-          options={{ headerTitle: () => <SearchBar /> }}
-        />
+            },
+            headerTitleAlign: 'center'
+          }}
+        >
+          <Stack.Screen
+            name="Home"
+            component={Home}
+            options={{ headerTitle: () => <SearchBar /> }}
+          />
 
-        <Stack.Screen
-          name="Details"
-          component={Details}
-        />
-      </Stack.Navigator>
+          <Stack.Screen
+            name="Details"
+            component={Details}
+          />
+        </Stack.Navigator>
+      </DataContext.Provider>
+
     </NavigationContainer>
     // <View style={styles.container}>
     //   {/* <Text>Open up App.js to start working on your app! Hello world</Text> */}

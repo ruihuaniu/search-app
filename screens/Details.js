@@ -1,11 +1,16 @@
 import React from 'react'
 import { StyleSheet, Text, View } from 'react-native'
+import ResultsList from '../components/ResultsList'
+import ListItem from '../components/ListItem'
 
-const Details = () => {
+const Details = ({ route, navigation }) => {
+    const item = route.params;
+
     return (
-        <View>
+        <>
             <Text>This is details page</Text>
-        </View>
+            <ListItem item={item} />
+        </>
     )
 }
 
