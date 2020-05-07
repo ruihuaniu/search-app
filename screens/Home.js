@@ -14,7 +14,7 @@ const Home = ({ navigation }) => {
             <ResultsList navigation={navigation} />
             {/* <Text>This is home page</Text> */}
             <Button
-                title="Go to details page"
+                title="Go to videos page"
                 onPress={() => navigation.navigate('Videos')}
             />
         </>

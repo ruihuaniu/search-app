@@ -12,52 +12,74 @@ import data from './assets/data/barton-data.json'
 import { DataContext } from './components/DataContext';
 import Videos from './screens/Videos';
 import Settings from './screens/Settings';
+import LogIn from './screens/LogIn';
+import SignUp from './screens/SignUp';
+import ResetPassword from './screens/ResetPassword';
 
 const Stack = createStackNavigator();
 
 export default function App() {
 
   const [items, setItems] = useState(data)
+  const [userToken, setUserToken] = useState(false)
+
   return (
     <NavigationContainer>
-      <DataContext.Provider value={{ items, setItems, data }}>
-        <Stack.Navigator
-          screenOptions={{
-            headerStyle: {
-              backgroundColor: '#eee',
-              borderColor: '#eee',
-              elevation: 0, // remove shadow on Android
-              shadowOpacity: 0, // remove shadow on iOS
-              borderBottomWidth: 0, // remove shadow on iOS
-            },
-            headerTitleStyle: {
-
-            },
-            headerTitleAlign: 'center'
-          }}
-        >
-
-
+      {!userToken ? (
+        <Stack.Navigator>
           <Stack.Screen
-            name="Home"
-            component={Home}
-            options={{ headerTitle: (navigation) => <SearchBar navigation={navigation} /> }}
+            name="LogIn"
+            component={LogIn}
+            initialParams={{ tokenState: [userToken, setUserToken] }}
           />
           <Stack.Screen
-            name="Details"
-            component={Details}
-          />
-
-          <Stack.Screen
-            name="Videos"
-            component={Videos}
+            name="SignUp"
+            component={SignUp}
           />
           <Stack.Screen
-            name="Settings"
-            component={Settings}
+            name="ResetPassword"
+            component={ResetPassword}
           />
         </Stack.Navigator>
-      </DataContext.Provider>
+      ) : (
+          <DataContext.Provider value={{ items, setItems, data }}>
+            <Stack.Navigator
+              screenOptions={{
+                headerStyle: {
+                  backgroundColor: '#eee',
+                  borderColor: '#eee',
+                  elevation: 0, // remove shadow on Android
+                  shadowOpacity: 0, // remove shadow on iOS
+                  borderBottomWidth: 0, // remove shadow on iOS
+                },
+                headerTitleStyle: {
+
+                },
+                headerTitleAlign: 'center'
+              }}
+            >
+              <Stack.Screen
+                name="Home"
+                component={Home}
+                options={{ headerTitle: (navigation) => <SearchBar navigation={navigation} /> }}
+              />
+              <Stack.Screen
+                name="Details"
+                component={Details}
+              />
+
+              <Stack.Screen
+                name="Videos"
+                component={Videos}
+              />
+              <Stack.Screen
+                name="Settings"
+                component={Settings}
+              />
+            </Stack.Navigator>
+          </DataContext.Provider>
+        )}
+
 
     </NavigationContainer>
     // <View style={styles.container}>

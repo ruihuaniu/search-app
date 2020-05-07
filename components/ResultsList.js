@@ -7,7 +7,7 @@ const ResultsList = ({ navigation }) => {
 
     const { items, setItems } = useContext(DataContext)
 
-    console.log('data in list is ', items);
+    // console.log('data in list is ', items);
 
 
     return (
