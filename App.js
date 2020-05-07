@@ -61,7 +61,7 @@ export default function App() {
               <Stack.Screen
                 name="Home"
                 component={Home}
-                options={{ headerTitle: (navigation) => <SearchBar navigation={navigation} /> }}
+                options={({ navigation }) => ({ headerTitle: () => <SearchBar navigation={navigation} /> })}
               />
               <Stack.Screen
                 name="Details"
