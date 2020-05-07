@@ -36,12 +36,13 @@ export default function App() {
             headerTitleAlign: 'center'
           }}
         >
+
+
           <Stack.Screen
             name="Home"
             component={Home}
             options={{ headerTitle: (navigation) => <SearchBar navigation={navigation} /> }}
           />
-
           <Stack.Screen
             name="Details"
             component={Details}

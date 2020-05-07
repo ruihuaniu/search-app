@@ -5,7 +5,7 @@ import Icon from '@expo/vector-icons/FontAwesome5'
 
 const SearchBar = ({ navigation }) => {
 
-    console.log("navigation is ", navigation);
+    // console.log("navigation is ", navigation);
 
 
     const { items, setItems, data } = useContext(DataContext)
@@ -35,6 +35,7 @@ const SearchBar = ({ navigation }) => {
                 <Text style={styles.button} title="Button" onPress={handleOnPress} >Search</Text>
             </TouchableOpacity>
             <Icon style={styles.settingIcon} name="cog" size={20} color="#000"
+                onPress={() => { Alert.alert("Under working :(") }}
             // onPress={() => navigation.navigate('Settings')}   //navigation with header title seems not working
             />
 
