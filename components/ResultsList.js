@@ -1,15 +1,14 @@
 import React, { useContext } from 'react';
-import { StyleSheet, Text, View, Image, FlatList, TouchableOpacity } from 'react-native';
+import { StyleSheet, Text, View, Image, FlatList, TouchableOpacity, Button } from 'react-native';
 import { DataContext } from './DataContext';
 import Icon from '@expo/vector-icons/FontAwesome5';
 import { images } from '../utils/images';
 
-const ResultsList = ({ navigation }) => {
+const ResultsList = ({ navigationAndRoute }) => {
 
     const { items, setItems } = useContext(DataContext)
-
-    // console.log('data in list is ', items);
-
+    const { navigation, route } = navigationAndRoute   //destructing
+    // console.log('route is ', route);
 
     return (
 
@@ -36,7 +35,6 @@ const ResultsList = ({ navigation }) => {
 
                 }}
             />
-
 
         </View>
 

@@ -1,15 +1,21 @@
 import React, { useState, useContext } from 'react'
-import { View, Text, TextInput, TouchableOpacity, Image, Alert, StyleSheet } from 'react-native'
+import { View, Text, TextInput, TouchableOpacity, Image, Alert, StyleSheet, Keyboard } from 'react-native'
 import { DataContext } from './DataContext'
 import Icon from '@expo/vector-icons/FontAwesome5'
 
-const SearchBar = ({ navigation }) => {
+const SearchBar = (props) => {
 
-    // console.log("navigation is ", navigation);
+
+    const { navigation, route, checkValue } = { ...props }
+    // console.log("route on search bar is ", props);
 
 
     const { items, setItems, data } = useContext(DataContext)
-    const [value, setValue] = useState()
+    const [value, setValue] = useState("")
+    const [isHome, setIsHome] = useState(true)  // check if at home screen
+
+    // setIsHome(checkValue && checkValue.isHome)
+
 
     const handleOnPress = () => {
         // console.log(value);
@@ -17,6 +23,10 @@ const SearchBar = ({ navigation }) => {
 
         const result = data.filter((item) => item.title.toLowerCase().includes(value.toLowerCase()))
         setItems(result)
+        navigation.navigate('SearchResults')
+        // setIsHome(false)
+        Keyboard.dismiss();
+        console.log("dismiss keyboard on search bar")
         // console.log("result is ", result);
 
     }
@@ -34,7 +44,7 @@ const SearchBar = ({ navigation }) => {
             <TouchableOpacity style={styles.buttonContainer} >
                 <Text style={styles.button} title="Button" onPress={handleOnPress} >Search</Text>
             </TouchableOpacity>
-            <Icon style={styles.settingIcon} name="cog" size={20} color="#000"
+            <Icon style={isHome ? styles.settingIcon : styles.remove} name="cog" size={20} color="#000"
                 // onPress={() => { Alert.alert("Under working :(") }}
                 onPress={() => navigation.navigate('Settings')}   //navigation with header title seems not working
             />
@@ -79,6 +89,10 @@ const styles = StyleSheet.create({
         paddingTop: 5,
         alignItems: 'center',
         justifyContent: 'center',
+
+    },
+    remove: {
+        display: 'none',
     }
 
 
