@@ -1,9 +1,14 @@
 import React from 'react'
 import { StyleSheet, Text, View, Image } from 'react-native'
 import { Linking } from 'expo'
+import { images } from '../utils/images'
 import Icon from '@expo/vector-icons/FontAwesome5'
 
 const ListItem = ({ item }) => {
+
+    console.log("images is ", images.ids["3"]);
+    // convert id of each item to array in order to check the id length of each item
+
 
     const handlePress = () => {
         Linking.openURL(item.link)
@@ -11,11 +16,14 @@ const ListItem = ({ item }) => {
 
     return (
         <View style={styles.container}>
-            <Image source={require("../assets/images/banner.jpg")} style={styles.image} />
-            <Text style={styles.text} onPress={handlePress}>{item.title} <Icon name="long-arrow-alt-right" size={20} /> </Text>
-            <Text style={styles.type}>{item.type.split(" ").join(", ")}</Text>
-            <Text>{item.description}</Text>
+            <View style={styles.card}>
+                <Image source={images.ids[item.id.toString().split("")[0]]} style={styles.image} />
+                <Text style={styles.text} onPress={handlePress}>{item.title} <Icon name="long-arrow-alt-right" size={20} /> </Text>
+                <Text style={styles.type}>{item.type.split(" ").join(", ")}</Text>
+                <Text>{item.description}</Text>
+            </View>
         </View>
+
     )
 }
 
@@ -26,6 +34,9 @@ const styles = StyleSheet.create({
         flex: 1,
         alignItems: 'center',
 
+    },
+    card: {
+        width: '90%',
     },
     image: {
         width: '100%',

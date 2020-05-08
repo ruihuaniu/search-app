@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
-import { StyleSheet, Text, TextInput, View, TouchableOpacity } from 'react-native'
+import { StyleSheet, Text, TextInput, View, TouchableOpacity, Keyboard, TouchableWithoutFeedback, ImageBackground } from 'react-native'
+
 
 
 const LogIn = ({ route, navigation }) => {
@@ -39,38 +40,89 @@ const LogIn = ({ route, navigation }) => {
     }
 
     return (
-        <View style={styles.container}>
-            <Text>This is login screen </Text>
-            <TextInput
-                placeholder="your email"
-                onChangeText={text => handleChange(text)}
-                value={emailValue}
-            />
-            <Text>{warnMgs}</Text>
-            <TextInput
-                placeholder="your password"
-                onChangeText={text => setPwdValue(text)}
-                value={pwdValue}
-            />
-            <TouchableOpacity onPress={handleSubmit}>
-                <Text>Log In</Text>
-            </TouchableOpacity>
-            <View>
-                <Text onPress={() => navigation.navigate('SignUp')}>Sign Up</Text>
-            </View>
-            <View>
-                <Text onPress={() => navigation.navigate('ResetPassword')}>Forget password?</Text>
-            </View>
-        </View>
+
+        <TouchableWithoutFeedback
+
+            onPress={() => {
+                Keyboard.dismiss();
+                console.log("keyboard dismiss")
+            }} >
+            {/* <View style={styles.container}> */}
+            <ImageBackground style={styles.backgroundImage} source={require("../assets/images/banner.jpg")}>
+
+                <Text>This is login screen </Text>
+                <TextInput
+                    style={styles.textInput}
+                    placeholder="your email"
+                    onChangeText={text => handleChange(text)}
+                    value={emailValue}
+                />
+                <Text style={{ color: "#C84104" }}>{warnMgs}</Text>
+                <TextInput
+                    style={styles.textInput}
+                    placeholder="your password"
+                    onChangeText={text => setPwdValue(text)}
+                    value={pwdValue}
+                />
+                <View style={styles.buttonContainer}>
+                    <TouchableOpacity onPress={handleSubmit}>
+                        <Text style={styles.button}>Log In</Text>
+                    </TouchableOpacity>
+                    <TouchableOpacity onPress={() => navigation.navigate('SignUp')}>
+                        <Text style={{ ...styles.button, backgroundColor: '#ddd' }}>Sign Up</Text>
+                    </TouchableOpacity>
+                </View>
+
+                <View>
+                    <Text onPress={() => navigation.navigate('ResetPassword')}>Forget password?</Text>
+                </View>
+
+            </ImageBackground>
+            {/* </View> */}
+
+        </TouchableWithoutFeedback >
+
     )
+
 }
 
 export default LogIn
 
 const styles = StyleSheet.create({
-    container: {
+    // container: {
+    //     flex: 1,
+    //     // justifyContent: 'center',
+    //     // alignItems: "center",
+    //     // backgroundColor: 'red'
+    // },
+    backgroundImage: {
+        width: '100%',
         flex: 1,
         justifyContent: 'center',
-        alignItems: "center"
+        alignItems: "center",
+        color: '#ddd'
+    },
+    textInput: {
+        borderBottomWidth: 1,
+        borderColor: 'red',
+        alignSelf: 'stretch',
+        padding: 6,
+        marginHorizontal: 50,
+        marginVertical: 10,
+        color: "#fff"
+        // backgroundColor: '#eee'
+    },
+    buttonContainer: {
+        flexDirection: 'row',
+    },
+    button: {
+        paddingHorizontal: 20,
+        paddingVertical: 10,
+        backgroundColor: '#eee',
+        textTransform: 'uppercase',
+        margin: 10,
+        color: '#318997',
+        fontWeight: 'bold'
     }
+
 })

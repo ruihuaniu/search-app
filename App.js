@@ -75,6 +75,7 @@ export default function App() {
               <Stack.Screen
                 name="Settings"
                 component={Settings}
+                initialParams={{ tokenState: [userToken, setUserToken] }}
               />
             </Stack.Navigator>
           </DataContext.Provider>
