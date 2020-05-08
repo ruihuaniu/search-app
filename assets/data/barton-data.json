@@ -1,7 +1,7 @@
 [
     {
         "id": 1,
-        "title": "Barton's product - Serene Project",
+        "title": "Serene Project",
         "type": "commercial",
         "link": "http://serene.tk",
         "image": "../assets/images/serene.png",
@@ -9,7 +9,7 @@
     },
     {
         "id": 2,
-        "title": "Barton's product - Timber Floor Centre Project",
+        "title": "Timber Floor Centre Project",
         "type": "commercial ecommerce",
         "link": "https://www.timberfloorcentre.com.au",
         "image": "../assets/images/timber_floor_center.png",
@@ -17,7 +17,7 @@
     },
     {
         "id": 3,
-        "title": "Barton's product - Admin Management Tool",
+        "title": "Admin Management Tool",
         "type": "commercial personal",
         "link": "https://admin-management.now.sh",
         "image": "../assets/images/admin_management.png",
@@ -25,7 +25,7 @@
     },
     {
         "id": 4,
-        "title": "Barton's product - TFC Commercial Project",
+        "title": "TFC Commercial Project",
         "type": "commercial ecommerce",
         "link": "https://www.tfccommercial.com.au",
         "image": "../assets/images/tfc_commercial.png",
@@ -33,7 +33,7 @@
     },
     {
         "id": 5,
-        "title": "Barton's product - Barton web Project",
+        "title": "Barton web Project",
         "type": "personal",
         "link": "https://bartonweb.web.app/",
         "image": "../assets/images/barton_web.png",
@@ -41,7 +41,7 @@
     },
     {
         "id": 6,
-        "title": "Barton's product - Searching what you want",
+        "title": "Searching what you want",
         "type": "personal",
         "link": "https://bartonweb.web.app/",
         "image": "../assets/images/interesting_search.png",
@@ -49,7 +49,7 @@
     },
     {
         "id": 11,
-        "title": "Barton's product - Serene Project",
+        "title": "Serene Project",
         "type": "commercial",
         "link": "http://serene.tk",
         "image": "../assets/images/serene.png",
@@ -57,7 +57,7 @@
     },
     {
         "id": 21,
-        "title": "Barton's product - Timber Floor Centre Project",
+        "title": "Timber Floor Centre Project",
         "type": "commercial ecommerce",
         "link": "https://www.timberfloorcentre.com.au",
         "image": "../assets/images/timber_floor_center.png",
@@ -65,7 +65,7 @@
     },
     {
         "id": 31,
-        "title": "Barton's product - Admin Management Tool",
+        "title": "Admin Management Tool",
         "type": "commercial personal",
         "link": "https://admin-management.now.sh",
         "image": "../assets/images/admin_management.png",
@@ -73,7 +73,7 @@
     },
     {
         "id": 41,
-        "title": "Barton's product - TFC Commercial Project",
+        "title": "TFC Commercial Project",
         "type": "commercial ecommerce",
         "link": "https://www.tfccommercial.com.au",
         "image": "../assets/images/tfc_commercial.png",
@@ -81,7 +81,7 @@
     },
     {
         "id": 51,
-        "title": "Barton's product - Barton web Project",
+        "title": "Barton web Project",
         "type": "personal",
         "link": "https://bartonweb.web.app/",
         "image": "../assets/images/barton_web.png",
@@ -89,7 +89,7 @@
     },
     {
         "id": 61,
-        "title": "Barton's product - Searching what you want",
+        "title": "Searching what you want",
         "type": "personal",
         "link": "https://bartonweb.web.app/",
         "image": "../assets/images/interesting_search.png",
@@ -97,7 +97,7 @@
     },
     {
         "id": 12,
-        "title": "Barton's product - Serene Project",
+        "title": "Serene Project",
         "type": "commercial",
         "link": "http://serene.tk",
         "image": "../assets/images/serene.png",
@@ -105,7 +105,7 @@
     },
     {
         "id": 22,
-        "title": "Barton's product - Timber Floor Centre Project",
+        "title": "Timber Floor Centre Project",
         "type": "commercial ecommerce",
         "link": "https://www.timberfloorcentre.com.au",
         "image": "../assets/images/timber_floor_center.png",
@@ -113,7 +113,7 @@
     },
     {
         "id": 32,
-        "title": "Barton's product - Admin Management Tool",
+        "title": "Admin Management Tool",
         "type": "commercial personal",
         "link": "https://admin-management.now.sh",
         "image": "../assets/images/admin_management.png",
@@ -121,7 +121,7 @@
     },
     {
         "id": 42,
-        "title": "Barton's product - TFC Commercial Project",
+        "title": "TFC Commercial Project",
         "type": "commercial ecommerce",
         "link": "https://www.tfccommercial.com.au",
         "image": "../assets/images/tfc_commercial.png",
@@ -129,7 +129,7 @@
     },
     {
         "id": 52,
-        "title": "Barton's product - Barton web Project",
+        "title": "Barton web Project",
         "type": "personal",
         "link": "https://bartonweb.web.app/",
         "image": "../assets/images/barton_web.png",
@@ -137,7 +137,7 @@
     },
     {
         "id": 62,
-        "title": "Barton's product - Searching what you want",
+        "title": "Searching what you want",
         "type": "personal",
         "link": "https://bartonweb.web.app/",
         "image": "../assets/images/interesting_search.png",
