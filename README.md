@@ -1,9 +1,10 @@
-## React APP
+## Search APP
 
 A React Native project for both ios and android phones.
 
 ### Features
 
+- Authentication flow (login, sign up, reset password, etc.)
 - Slider Banners.
 - Search items by name (fuzzy search).
 - Lazy loading of items.
