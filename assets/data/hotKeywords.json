@@ -1,0 +1,30 @@
+{
+    "recentSearch": [
+        {
+            "id": 1,
+            "name": "barton"
+        },
+        {
+            "id": 2,
+            "name": "tfc"
+        },
+        {
+            "id": 3,
+            "name": "product"
+        }
+    ],
+    "mostSearch": [
+        {
+            "id": 1,
+            "name": "barton"
+        },
+        {
+            "id": 2,
+            "name": "admin"
+        },
+        {
+            "id": 3,
+            "name": "features"
+        }
+    ],
+}
