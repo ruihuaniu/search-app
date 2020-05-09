@@ -14,12 +14,9 @@ A React Native project for both ios and android phones.
 ### Demo
 
 search
-
-<span style="width:400px; height:800px; float:left; padding:16px">
 ![features demo](./assets/images/search-app.gif)
-</span>
 
-<span style="width:400px; height:800px; float:left; padding:16px">
+
 authentication
 ![authentication demo](./assets/images/app-auth.gif)
-</span>
+
