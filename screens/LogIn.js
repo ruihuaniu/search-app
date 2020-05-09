@@ -5,9 +5,9 @@ import { StyleSheet, Text, TextInput, View, TouchableOpacity, Keyboard, Touchabl
 
 const LogIn = ({ route, navigation }) => {
 
-    console.log("initial params ", route.params);
+    // console.log("initial params ", route.params);
     const [userToken, setUserToken] = route.params.tokenState;
-    console.log("usertoken", userToken);
+    // console.log("usertoken", userToken);
 
 
     const [emailValue, setEmailValue] = useState("")

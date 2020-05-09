@@ -6,10 +6,6 @@ import Icon from '@expo/vector-icons/FontAwesome5'
 
 const ListItem = ({ item }) => {
 
-    console.log("images is ", images.ids["3"]);
-    // convert id of each item to array in order to check the id length of each item
-
-
     const handlePress = () => {
         Linking.openURL(item.link)
     }

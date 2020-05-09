@@ -20,3 +20,8 @@ A React Native project for both ios and android phones.
 #### authentication
 
 ![authentication demo](./assets/images/app-auth.gif)
+
+### Languages & libraries
+
+- React Native
+- Formik

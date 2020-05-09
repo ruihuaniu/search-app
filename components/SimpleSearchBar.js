@@ -1,9 +1,20 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { StyleSheet, Text, TextInput, View } from 'react-native'
 import Icon from '@expo/vector-icons/FontAwesome5'
 import { TouchableOpacity } from 'react-native-gesture-handler'
+import { DataContext } from './DataContext'
 
 const SimpleSearchBar = ({ navigation }) => {
+
+    const { isSearch, setIsSearch } = useContext(DataContext)
+
+    const handleOnFocus = () => {
+        setIsSearch(false)
+
+        // console.log("isSearch ", isSearch);
+        navigation.navigate('SearchResults')
+    }
+
     return (
         <View style={styles.container}>
             <View style={styles.inputContainer} >
@@ -14,7 +25,7 @@ const SimpleSearchBar = ({ navigation }) => {
                     style={styles.input}
                     placeholder="Search name here..."
                     showSoftInputOnFocus={false}
-                    onFocus={() => navigation.navigate('SearchResults')}
+                    onFocus={handleOnFocus}
                 />
             </View>
 

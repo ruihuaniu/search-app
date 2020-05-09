@@ -13,7 +13,7 @@ const Home = (props) => {
         <TouchableWithoutFeedback
             onPress={() => {
                 Keyboard.dismiss();
-                console.log("dismiss keyboard")
+                // console.log("dismiss keyboard")
             }
             }>
             <View style={{ flex: 1 }}>
