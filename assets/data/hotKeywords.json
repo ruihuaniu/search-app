@@ -11,6 +11,10 @@
         {
             "id": 3,
             "name": "product"
+        },
+        {
+            "id": 4,
+            "name": "serene"
         }
     ],
     "mostSearch": [
@@ -24,7 +28,7 @@
         },
         {
             "id": 3,
-            "name": "features"
+            "name": "project"
         }
     ],
 }

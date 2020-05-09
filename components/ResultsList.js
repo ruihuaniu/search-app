@@ -12,12 +12,12 @@ const ResultsList = ({ navigationAndRoute }) => {
     const { navigation, route } = navigationAndRoute   //destructing
     const [isHome, setIsHome] = useState(true)  // check if at home screen
 
-    useEffect(() => {
-        // console.log('route on result list is ', route);
-        if (route.name !== "Home") {
-            setIsHome(false)
-        }
-    }, [])
+    // useEffect(() => {
+    //     // console.log('route on result list is ', route);
+    //     if (route.name !== "Home") {
+    //         setIsHome(false)
+    //     }
+    // }, [])
 
 
     return (

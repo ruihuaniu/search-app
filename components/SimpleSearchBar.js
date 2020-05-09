@@ -43,11 +43,12 @@ const styles = StyleSheet.create({
     },
     input: {
         marginLeft: 5,
+        width: '90%',
     },
 
     settingIcon: {
         width: '10%',
-        margin: 5,
+        marginLeft: 5,
         paddingTop: 5,
         alignItems: 'center',
         justifyContent: 'center',

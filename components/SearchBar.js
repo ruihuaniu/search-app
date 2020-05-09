@@ -10,8 +10,8 @@ const SearchBar = (props) => {
     // console.log("route outside on search bar is ", route);
 
 
-    const { items, setItems, data, isSearch, setIsSearch } = useContext(DataContext)
-    const [value, setValue] = useState("")
+    const { items, setItems, data, searchValue, setSearchValue, isSearch, setIsSearch } = useContext(DataContext)
+    // const [value, setValue] = useState("")
     const [isHome, setIsHome] = useState(true)  // check if at home screen
 
     // setIsHome(checkValue && checkValue.isHome)
@@ -23,17 +23,14 @@ const SearchBar = (props) => {
     }, [])
 
     const handleOnPress = () => {
-        // console.log(value);
+
         // console.log("data in search is ", items);
 
-        const result = data.filter((item) => item.title.toLowerCase().includes(value.toLowerCase()))
+        const result = data.filter((item) => item.title.toLowerCase().includes(searchValue.toLowerCase()))
         setItems(result)
         setIsSearch(true)
-        navigation.navigate('SearchResults')
-
+        // navigation.navigate('SearchResults')
         Keyboard.dismiss();
-        // console.log("dismiss keyboard on search bar")
-        // console.log("result is ", result);
 
     }
     return (
@@ -42,8 +39,8 @@ const SearchBar = (props) => {
                 <TextInput
                     style={styles.input}
                     placeholder="Search name here..."
-                    value={value}
-                    onChangeText={text => setValue(text)}
+                    value={searchValue}
+                    onChangeText={text => setSearchValue(text)}
                     onFocus={() => setIsSearch(false)}
                     autoFocus={true}
                 />
