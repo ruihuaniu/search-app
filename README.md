@@ -13,10 +13,10 @@ A React Native project for both ios and android phones.
 
 ### Demo
 
-search
+#### search
+
 ![features demo](./assets/images/search-app.gif)
 
+#### authentication
 
-authentication
 ![authentication demo](./assets/images/app-auth.gif)
-
