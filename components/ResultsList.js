@@ -6,6 +6,8 @@ import { images } from '../utils/images';
 
 const ResultsList = ({ navigationAndRoute }) => {
 
+
+
     const { items, setItems } = useContext(DataContext)
     const { navigation, route } = navigationAndRoute   //destructing
     const [isHome, setIsHome] = useState(true)  // check if at home screen
@@ -23,7 +25,12 @@ const ResultsList = ({ navigationAndRoute }) => {
 
 
         <View style={styles.container}>
-            <Text style={isHome ? styles.remove : styles.text}>{items.length} results found and listed below </Text>
+            <Text
+                //style={isHome ? styles.remove : styles.text}   // render could be slow if the list is large, and as it will use different components on home page, so could get rid of this check.
+                style={styles.text}
+            >
+                {items.length} results found and listed below
+            </Text>
 
             <FlatList
                 numColumns={2}

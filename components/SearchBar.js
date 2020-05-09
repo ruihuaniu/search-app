@@ -6,11 +6,11 @@ import Icon from '@expo/vector-icons/FontAwesome5'
 const SearchBar = (props) => {
 
 
-    const { navigation, route, checkValue } = { ...props }
+    const { navigation, route } = { ...props }
     // console.log("route outside on search bar is ", route);
 
 
-    const { items, setItems, data } = useContext(DataContext)
+    const { items, setItems, data, isSearch, setIsSearch } = useContext(DataContext)
     const [value, setValue] = useState("")
     const [isHome, setIsHome] = useState(true)  // check if at home screen
 
@@ -28,6 +28,7 @@ const SearchBar = (props) => {
 
         const result = data.filter((item) => item.title.toLowerCase().includes(value.toLowerCase()))
         setItems(result)
+        setIsSearch(true)
         navigation.navigate('SearchResults')
 
         Keyboard.dismiss();
@@ -43,7 +44,7 @@ const SearchBar = (props) => {
                     placeholder="Search name here..."
                     value={value}
                     onChangeText={text => setValue(text)}
-                    onFocus={() => navigation.navigate('SearchResults')}
+                    onFocus={() => setIsSearch(false)}
                     autoFocus={true}
                 />
             </View>

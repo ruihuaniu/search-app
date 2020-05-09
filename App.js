@@ -24,6 +24,7 @@ export default function App() {
 
   const [items, setItems] = useState(data)
   const [userToken, setUserToken] = useState(false)
+  const [isSearch, setIsSearch] = useState(false)
 
   return (
     <NavigationContainer>
@@ -44,7 +45,7 @@ export default function App() {
           />
         </Stack.Navigator>
       ) : (
-          <DataContext.Provider value={{ items, setItems, data }}>
+          <DataContext.Provider value={{ items, setItems, data, isSearch, setIsSearch }}>
             <Stack.Navigator
               screenOptions={{
                 headerStyle: {

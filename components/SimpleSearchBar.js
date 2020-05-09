@@ -1,11 +1,14 @@
 import React from 'react'
 import { StyleSheet, Text, TextInput, View } from 'react-native'
 import Icon from '@expo/vector-icons/FontAwesome5'
+import { TouchableOpacity } from 'react-native-gesture-handler'
 
 const SimpleSearchBar = ({ navigation }) => {
     return (
         <View style={styles.container}>
             <View style={styles.inputContainer} >
+                {/* <Text onPress={() => console.log("parent is clicked")}>test
+                <Text onPress={(e) => e.stopPropagation()}>test inside </Text></Text> */}
                 <Icon name="search" size={20} color="#ccc" />
                 <TextInput
                     style={styles.input}
