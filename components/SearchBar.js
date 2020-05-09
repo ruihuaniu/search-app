@@ -1,4 +1,4 @@
-import React, { useState, useContext } from 'react'
+import React, { useState, useContext, useEffect, useLayoutEffect } from 'react'
 import { View, Text, TextInput, TouchableOpacity, Image, Alert, StyleSheet, Keyboard } from 'react-native'
 import { DataContext } from './DataContext'
 import Icon from '@expo/vector-icons/FontAwesome5'
@@ -7,7 +7,7 @@ const SearchBar = (props) => {
 
 
     const { navigation, route, checkValue } = { ...props }
-    // console.log("route on search bar is ", props);
+    // console.log("route outside on search bar is ", route);
 
 
     const { items, setItems, data } = useContext(DataContext)
@@ -15,7 +15,12 @@ const SearchBar = (props) => {
     const [isHome, setIsHome] = useState(true)  // check if at home screen
 
     // setIsHome(checkValue && checkValue.isHome)
-
+    useEffect(() => {
+        // console.log("route inside on search bar is ", route);
+        if (route.name !== 'Home') {
+            setIsHome(false)
+        }
+    }, [])
 
     const handleOnPress = () => {
         // console.log(value);
@@ -24,9 +29,9 @@ const SearchBar = (props) => {
         const result = data.filter((item) => item.title.toLowerCase().includes(value.toLowerCase()))
         setItems(result)
         navigation.navigate('SearchResults')
-        // setIsHome(false)
+
         Keyboard.dismiss();
-        console.log("dismiss keyboard on search bar")
+        // console.log("dismiss keyboard on search bar")
         // console.log("result is ", result);
 
     }
@@ -38,16 +43,20 @@ const SearchBar = (props) => {
                     placeholder="Search name here..."
                     value={value}
                     onChangeText={text => setValue(text)}
+                    onFocus={() => navigation.navigate('SearchResults')}
+                    autoFocus={true}
                 />
             </View>
+
+            {/* change search button with a search icon  */}
+            {/* <Icon onPress={handleOnPress} name="search" size={20} color="#000" /> */}
 
             <TouchableOpacity style={styles.buttonContainer} >
                 <Text style={styles.button} title="Button" onPress={handleOnPress} >Search</Text>
             </TouchableOpacity>
-            <Icon style={isHome ? styles.settingIcon : styles.remove} name="cog" size={20} color="#000"
-                // onPress={() => { Alert.alert("Under working :(") }}
-                onPress={() => navigation.navigate('Settings')}   //navigation with header title seems not working
-            />
+            {/* <Icon style={isHome ? styles.settingIcon : styles.remove} name="cog" size={20} color="#000"
+                onPress={() => navigation.navigate('Settings')}
+            /> */}
 
         </View>
     )

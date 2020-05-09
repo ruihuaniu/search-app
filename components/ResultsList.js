@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { StyleSheet, Text, View, Image, FlatList, TouchableOpacity, Button } from 'react-native';
 import { DataContext } from './DataContext';
 import Icon from '@expo/vector-icons/FontAwesome5';
@@ -8,14 +8,22 @@ const ResultsList = ({ navigationAndRoute }) => {
 
     const { items, setItems } = useContext(DataContext)
     const { navigation, route } = navigationAndRoute   //destructing
-    // console.log('route is ', route);
+    const [isHome, setIsHome] = useState(true)  // check if at home screen
+
+    useEffect(() => {
+        // console.log('route on result list is ', route);
+        if (route.name !== "Home") {
+            setIsHome(false)
+        }
+    }, [])
+
 
     return (
 
 
 
         <View style={styles.container}>
-            <Text style={styles.text}>{items.length} results found and listed below </Text>
+            <Text style={isHome ? styles.remove : styles.text}>{items.length} results found and listed below </Text>
 
             <FlatList
                 numColumns={2}
@@ -75,5 +83,8 @@ const styles = StyleSheet.create({
     image: {
         width: 200,
         height: 250,
+    },
+    remove: {
+        display: 'none'
     }
 })

@@ -16,6 +16,7 @@ import LogIn from './screens/LogIn';
 import SignUp from './screens/SignUp';
 import ResetPassword from './screens/ResetPassword';
 import SearchResults from './screens/SearchResults';
+import SimpleSearchBar from './components/SimpleSearchBar';
 
 const Stack = createStackNavigator();
 
@@ -62,12 +63,12 @@ export default function App() {
               <Stack.Screen
                 name="Home"
                 component={Home}
-                options={(props) => ({ headerTitle: () => <SearchBar {...props} /> })}  //props passes both navigation and route
+                options={(props) => ({ headerTitle: () => <SimpleSearchBar {...props} /> })}  //props passes both navigation and route
               />
               <Stack.Screen
                 name="SearchResults"
                 component={SearchResults}
-                options={(props) => ({ headerTitle: () => <SearchBar {...props} checkValue={{ isHome: false }} /> })}
+                options={(props) => ({ headerTitle: () => <SearchBar {...props} /> })}
               />
 
               <Stack.Screen
